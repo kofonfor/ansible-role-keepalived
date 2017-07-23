@@ -1,0 +1,8 @@
+---
+# Debian specific package installations
+- include: Debian.yml
+  when: ansible_distribution == "Debian"
+
+# RedHat specific package installations
+- include: RedHat.yml
+  when: ansible_os_family == "RedHat"
