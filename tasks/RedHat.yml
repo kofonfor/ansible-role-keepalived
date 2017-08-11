@@ -4,6 +4,9 @@
 - name: set net.ipv4.ip_nonlocal_bind to 1
   sysctl: name=net.ipv4.ip_nonlocal_bind value=1 state=present
 
+- name: install psmisc
+  yum: name=psmisc
+
 - name: put keepalived.conf
   template: src=keepalived.conf dest=/etc/keepalived/keepalived.conf backup=yes
 
